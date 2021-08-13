@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/homepage.dart';
 import 'package:hotel_app/search_page.dart';
-import 'package:hotel_app/theme.dart';
+
 import 'package:flutter/services.dart';
 
 void main() {

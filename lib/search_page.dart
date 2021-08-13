@@ -169,48 +169,46 @@ class _SearchPageState extends State<SearchPage> {
               Container(
                 margin: EdgeInsets.only(left: 24, right: 24, bottom: 13),
                 child: Card(
-                  child: Stack(
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                'images/hotels2.png',
-                                height: 70,
-                              ),
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            'images/hotels2.png',
+                            height: 70,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Skytown Hotel",
-                                style: fontStyle.copyWith(fontSize: 14),
-                              ),
-                              Text(
-                                "Sibolga, Medan",
-                                style: fontStyle.copyWith(
-                                    fontSize: 12, color: Color(0xFFB7B7B7)),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 110, right: 12),
-                            child: Row(
-                              children: [
-                                Text(
-                                  "0,1Km",
-                                  style: fontStyle.copyWith(
-                                      fontSize: 12, color: Color(0xFFF2735B)),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+                        ),
                       ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Skytown Hotel",
+                              style: fontStyle.copyWith(fontSize: 14),
+                            ),
+                            Text(
+                              "Sibolga, Medan",
+                              style: fontStyle.copyWith(
+                                  fontSize: 12, color: Color(0xFFB7B7B7)),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 80),
+                        child: Row(
+                          children: [
+                            Text(
+                              "0,1Km",
+                              style: fontStyle.copyWith(
+                                  fontSize: 12, color: Color(0xFFF2735B)),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -218,48 +216,46 @@ class _SearchPageState extends State<SearchPage> {
               Container(
                 margin: EdgeInsets.only(left: 24, right: 24, bottom: 13),
                 child: Card(
-                  child: Stack(
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                'images/hotels3.png',
-                                height: 70,
-                              ),
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            'images/hotels3.png',
+                            height: 70,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Skytown Hotel",
-                                style: fontStyle.copyWith(fontSize: 14),
-                              ),
-                              Text(
-                                "Sibolga, Medan",
-                                style: fontStyle.copyWith(
-                                    fontSize: 12, color: Color(0xFFB7B7B7)),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 110, right: 12),
-                            child: Row(
-                              children: [
-                                Text(
-                                  "1,6Km",
-                                  style: fontStyle.copyWith(
-                                      fontSize: 12, color: Color(0xFFF2735B)),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+                        ),
                       ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Skytown Hotel",
+                              style: fontStyle.copyWith(fontSize: 14),
+                            ),
+                            Text(
+                              "Sibolga, Medan",
+                              style: fontStyle.copyWith(
+                                  fontSize: 12, color: Color(0xFFB7B7B7)),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 80),
+                        child: Row(
+                          children: [
+                            Text(
+                              "1,1Km",
+                              style: fontStyle.copyWith(
+                                  fontSize: 12, color: Color(0xFFF2735B)),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -267,48 +263,46 @@ class _SearchPageState extends State<SearchPage> {
               Container(
                 margin: EdgeInsets.only(left: 24, right: 24, bottom: 13),
                 child: Card(
-                  child: Stack(
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                'images/hotels4.png',
-                                height: 70,
-                              ),
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            'images/hotels4.png',
+                            height: 70,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Skytown Hotel",
-                                style: fontStyle.copyWith(fontSize: 14),
-                              ),
-                              Text(
-                                "Sibolga, Medan",
-                                style: fontStyle.copyWith(
-                                    fontSize: 12, color: Color(0xFFB7B7B7)),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 110, right: 12),
-                            child: Row(
-                              children: [
-                                Text(
-                                  "2,2Km",
-                                  style: fontStyle.copyWith(
-                                      fontSize: 12, color: Color(0xFFF2735B)),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+                        ),
                       ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Skytown Hotel",
+                              style: fontStyle.copyWith(fontSize: 14),
+                            ),
+                            Text(
+                              "Sibolga, Medan",
+                              style: fontStyle.copyWith(
+                                  fontSize: 12, color: Color(0xFFB7B7B7)),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 80),
+                        child: Row(
+                          children: [
+                            Text(
+                              "2,1Km",
+                              style: fontStyle.copyWith(
+                                  fontSize: 12, color: Color(0xFFF2735B)),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
