@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_app/theme.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
 
   @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
+    int _selectedIndex = 0;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -123,155 +133,458 @@ class MyApp extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Container(
-                  height: 350,
+                  height: 390,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      SizedBox(
-                        width: 24,
-                      ),
-                      Card(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 12, right: 12),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(12),
-                                    child: Image.asset(
-                                      'images/hotels1.png',
-                                      height: 200,
+                      Container(
+                        margin: EdgeInsets.only(left: 24, right: 24),
+                        width: 300,
+                        child: Card(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 12, right: 12),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image.asset(
+                                    'images/hotels1.png',
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 12, top: 12),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Bimosaurus Hotel",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 12, top: 12, bottom: 5),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        "Bimosaurus Hotel",
-                                        style: fontStyle.copyWith(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 12),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "4,9",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 12,
+                                          color: Color(0xFFB7B7B7),
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(
+                                      width: 2,
+                                    ),
+                                    Image.asset(
+                                      'images/rating.png',
+                                      height: 18,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 12),
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      'images/location.png',
+                                      height: 12,
+                                    ),
+                                    SizedBox(
+                                      width: 6,
+                                    ),
+                                    Text(
+                                      "Safari, Buitenzorg",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 14,
+                                          color: Color(0xFFB7B7B7)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Divider(
+                                thickness: 1,
+                                color: Color(0xFFEEEEEE),
+                              ),
+                              Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 22),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Price Start From:",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 12,
+                                          color: Color(0xFFB7B7B7)),
+                                    ),
+                                    RichText(
+                                      text: TextSpan(
+                                        style:
+                                            DefaultTextStyle.of(context).style,
+                                        children: [
+                                          TextSpan(
+                                            text: "IDR 599,999",
+                                            style: fontStyle.copyWith(
+                                                fontSize: 21, color: blueColor),
+                                          ),
+                                          TextSpan(
+                                            text: "/night",
+                                            style: fontStyle.copyWith(
+                                                fontSize: 10,
+                                                color: Color(0xFFB7B7B7)),
+                                          )
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 77, top: 27),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        "4,9",
-                                        style: fontStyle.copyWith(
-                                            fontSize: 18,
-                                            color: Color(0xFFB7B7B7),
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 2, top: 27),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'images/rating.png',
-                                        height: 18,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Text("data"),
-                          ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      Card(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 12, right: 12),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(12),
-                                    child: Image.asset(
-                                      'images/hotels1.png',
-                                      height: 200,
+                      Container(
+                        width: 300,
+                        child: Card(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 12, right: 12),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image.asset(
+                                    'images/hotels1.png',
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 12, top: 12),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Bimosaurus Hotel",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 12, top: 12, bottom: 5),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        "Bimosaurus Hotel",
-                                        style: fontStyle.copyWith(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 12),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "4,9",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 12,
+                                          color: Color(0xFFB7B7B7),
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(
+                                      width: 2,
+                                    ),
+                                    Image.asset(
+                                      'images/rating.png',
+                                      height: 18,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 12),
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      'images/location.png',
+                                      height: 12,
+                                    ),
+                                    SizedBox(
+                                      width: 6,
+                                    ),
+                                    Text(
+                                      "Safari, Buitenzorg",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 14,
+                                          color: Color(0xFFB7B7B7)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Divider(
+                                thickness: 1,
+                                color: Color(0xFFEEEEEE),
+                              ),
+                              Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 22),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Price Start From:",
+                                      style: fontStyle.copyWith(
+                                          fontSize: 12,
+                                          color: Color(0xFFB7B7B7)),
+                                    ),
+                                    RichText(
+                                      text: TextSpan(
+                                        style:
+                                            DefaultTextStyle.of(context).style,
+                                        children: [
+                                          TextSpan(
+                                            text: "IDR 599,999",
+                                            style: fontStyle.copyWith(
+                                                fontSize: 21, color: blueColor),
+                                          ),
+                                          TextSpan(
+                                            text: "/night",
+                                            style: fontStyle.copyWith(
+                                                fontSize: 10,
+                                                color: Color(0xFFB7B7B7)),
+                                          )
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 77, top: 27),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        "4,9",
-                                        style: fontStyle.copyWith(
-                                            fontSize: 18,
-                                            color: Color(0xFFB7B7B7),
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 2, top: 27),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'images/rating.png',
-                                        height: 18,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Text("data"),
-                          ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(
+                      horizontal: defaultMargin, vertical: 24),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Recommended Hotels",
+                        style: fontStyle.copyWith(
+                            fontSize: 18,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        "View all",
+                        style: fontStyle.copyWith(
+                            fontSize: 12,
+                            color: blueColor,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 24, right: 24, bottom: 13),
+                  child: Card(
+                    child: Stack(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.asset(
+                                  'images/hotels2.png',
+                                  height: 70,
+                                ),
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Skytown Hotel",
+                                  style: fontStyle.copyWith(fontSize: 14),
+                                ),
+                                Text(
+                                  "Sibolga, Medan",
+                                  style: fontStyle.copyWith(
+                                      fontSize: 12, color: Color(0xFFB7B7B7)),
+                                )
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 80, right: 12),
+                              child: Row(
+                                children: [
+                                  Text("4,9"),
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  Image.asset(
+                                    'images/rating.png',
+                                    height: 18,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 24, right: 24, bottom: 13),
+                  child: Card(
+                    child: Stack(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.asset(
+                                  'images/hotels2.png',
+                                  height: 70,
+                                ),
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Skytown Hotel",
+                                  style: fontStyle.copyWith(fontSize: 14),
+                                ),
+                                Text(
+                                  "Sibolga, Medan",
+                                  style: fontStyle.copyWith(
+                                      fontSize: 12, color: Color(0xFFB7B7B7)),
+                                )
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 80, right: 12),
+                              child: Row(
+                                children: [
+                                  Text("4,9"),
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  Image.asset(
+                                    'images/rating.png',
+                                    height: 18,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 24, right: 24, bottom: 13),
+                  child: Card(
+                    child: Stack(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.asset(
+                                  'images/hotels2.png',
+                                  height: 70,
+                                ),
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Skytown Hotel",
+                                  style: fontStyle.copyWith(fontSize: 14),
+                                ),
+                                Text(
+                                  "Sibolga, Medan",
+                                  style: fontStyle.copyWith(
+                                      fontSize: 12, color: Color(0xFFB7B7B7)),
+                                )
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 80, right: 12),
+                              child: Row(
+                                children: [
+                                  Text("4,9"),
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  Image.asset(
+                                    'images/rating.png',
+                                    height: 18,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
             ),
           ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'images/home.png',
+                  height: 20,
+                ),
+                label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'images/search.png',
+                  height: 20,
+                ),
+                label: 'Search'),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'images/order.png',
+                  height: 20,
+                ),
+                label: 'Order'),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'images/profile.png',
+                  height: 20,
+                ),
+                label: 'Order')
+          ],
+          currentIndex: _selectedIndex,
         ),
       ),
     );
