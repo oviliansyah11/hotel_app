@@ -1,16 +1,7 @@
 # hotel_app
+i create simple ui apps
 
-A new Flutter project.
+thanks to @buildwithangga for free pixel resource (only member)
 
-## Getting Started
+![image](https://user-images.githubusercontent.com/64517729/129749637-3b05ccce-7f8c-4e0e-bcfa-32f0b5754e7d.png)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
